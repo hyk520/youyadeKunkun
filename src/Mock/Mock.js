@@ -1,12 +1,44 @@
-
+var data=[
+    {id:0,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:1,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:2,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:3,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:4,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:5,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:6,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:7,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:8,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:9,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:10,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:11,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:12,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:13,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:14,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:15,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:16,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:17,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:18,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:19,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:20,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:21,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:22,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:23,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:24,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:25,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:26,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:27,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:28,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:29,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'},
+    {id:30,pic:"http://dummyimage.com/100x100",desc:'xxxz',link:'http'}
+]
 Mock.mock('/userlist','post',function(options){
-    var {img}=JSON.parse(option.body);
-    return {
-        "status":200,
-        "list|3":[{
-            "id|+1":0,
-            "img":"@cimage(400x100)"
+    var {count}=JSON.parse(option.body);
+    return Mock.mock({
+        "list|30":[{
+            id:"@guid",
+            name:"@cname",
+            link:"@cemail",
+            pic:"@image(100x100)"
         }]
-        
-    }
+    }).list.slide(0,count)
 })
